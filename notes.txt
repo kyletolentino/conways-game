@@ -1,0 +1,16 @@
+2/7/2020
+- Setup git on Engineering Workstation (EWS)
+- np.random.randit to generate 0s and 1s randomly
+- need to figure out way to store previous state while iterating
+
+- three cases: (1)Corners, (2)Sides/Edges, (3)Everything else
+- Corners have 3 neighbors
+- Sides/Edges have 5 neighbors
+- Everything else has 8 neighbors (holds true for even x even matrices, par 2x2)
+
+- 0x0, 1x1, 2x2 special cases (DONT FORGET)
+
+
+2/6/2020
+- Initialized git for source control
+- doing 2 for loops (x,y), might consider np.ndenumerate

@@ -16,7 +16,11 @@ for x in range(ex.shape[0]):
         # corner case
         if ((x==0 or x==ex.shape[0]-1) and (y==0 or y==ex.shape[1]-1)):
             print("Corner: ", ex[x][y])
+
+        # side case
         elif ((x==0 or x==ex.shape[0]-1) or (y==0 or y==ex.shape[1]-1)):
             print("Side: ", ex[x][y])
+
+        # everything else
         else:
             print("Else: ", ex[x][y])
