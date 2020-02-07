@@ -1,25 +1,32 @@
 import numpy as np
 import pickle
-
+import argparse
 # calling my functions
 import functions as func
 
-ex = pickle.load(open("test.pkl", 'rb'))
-# first = np.array([[0,1,0], [0,1,1], [1,0,1]])
-
-# need to create temporary state before looping
-# don't want to access edited values while iterating
-# i.e. something changed in row 1, but row 2 needs original value
-
-next = np.zeros((ex.shape[0], ex.shape[1]), dtype=int)
-
-print(ex)
+ex = pickle.load(open("input.pkl", 'rb'))
 print("")
+print(ex)
 
+n = 4
 
-for x in range(ex.shape[0]):
-    for y in range(ex.shape[1]):
+def runs(state, n):
+    count = n
+    if count<=1:
+        print("")
+        #print("    |")
+        print("    V")
+        print("")
+        return func.step(state)
+    else:
+        count -= 1
+        next = func.step(state)
+        print("")
+        #print("    |")
+        print("    V")
+        print("")
+        print(next)
+        return runs(next, count)
 
-        next[x][y] = func.check((x,y), ex)
-
-print(next)
+print(runs(ex, n))
+print("")
