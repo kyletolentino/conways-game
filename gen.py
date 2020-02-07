@@ -1,13 +1,10 @@
 import numpy as np
 import pickle
 
-# empty_grid = np.zeros((3,3))
-# with open('empty.pkl', 'wb') as outfile:
-#    pickle.dump(empty_grid, outfile)
 
+# choose dimension of square
+dim = 3;
 
-d = 3;
-
-test = np.random.randint(2, size=(d,d))
+test = np.random.randint(2, size=(dim,dim))
 with open('test.pkl', 'wb') as outfile:
    pickle.dump(test, outfile)
