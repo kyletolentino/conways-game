@@ -9,8 +9,16 @@
 - Everything else has 8 neighbors (holds true for even x even matrices, par 2x2)
 
 - 0x0, 1x1, 2x2 special cases (DONT FORGET)
+- goal: move contents from game.py into another function (so I can call for x generations)
+- need-to-do: figure out how to account for edges lol
+
+- updated else check because I counted the 1 for the position we were looking at
+- might need to just combine all functions into 1
+    - provided that I put in conditions that prevent out of bounds (corner and edge)
+    - might try continue if x,y go out of bounds (especially with -1,-1)
+- still stuck :(
 
 
 2/6/2020
 - Initialized git for source control
-- doing 2 for loops (x,y), might consider np.ndenumerate
+- doing 2 for loops (x,y), might consider np.ndenumerate (read something about large dimensions)
