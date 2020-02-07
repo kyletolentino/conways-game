@@ -11,27 +11,22 @@ import numpy as np
 # for each function, it takes the position and state/generation (i.e. the matrix)
 
 
-def check_corner(position, state):
-    x = position[0]
-    y = position[1]
-
-
-def check_side(position, state):
-    x = position[0]
-    y = position[1]
-
-
-
-def check_else(position, state):
+def check(position, state):
     x = position[0]
     y = position[1]
     count = 0
 
+    # created two for loops to get # of 1s around given position
     for i in range(x-1, x+2):
-        for j in range(x-1, y+2):
-            if (state[i][j] == 1):
+        for j in range(y-1, y+2):
+            # needed this to prevent cell from counting itself (in case it was 1)
+            if(i == x and j == y):
+                continue
+            elif (state[i][j] == 1):
                 count += 1
     
+
+    # apply rules if cell is dead/alive
     if (state[x][y] == 0):
         if (count == 3):
             return 1
