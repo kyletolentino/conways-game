@@ -16,8 +16,14 @@
 - might need to just combine all functions into 1
     - provided that I put in conditions that prevent out of bounds (corner and edge)
     - might try continue if x,y go out of bounds (especially with -1,-1)
-- still stuck :(
-
+- got it to work!! (for most part)
+    - (2,1) is 1 but should be 0
+    - running func((2,1), state) returns a 0 but not on the board
+    
+- EUREEEKA!
+    - I think it was the way I assigned ex[x,y] in game.py
+    - Should have created copy first (with dim of first state)
+    - then copy within for loops
 
 2/6/2020
 - Initialized git for source control
