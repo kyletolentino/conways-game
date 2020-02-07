@@ -7,23 +7,24 @@ import numpy as np
 
 
 # General Strat:
-# created functions for the 3 cases
 # for each function, it takes the position and state/generation (i.e. the matrix)
+# if out of bounds, continue
+# count up all 1s w/in perimeter of (x,y)
 
 
 def check(position, state):
     # position will be tuple (x,y)
-    # state is the current gen
     x = position[0]
     y = position[1]
     count = 0
 
     # created two for loops to get # of 1s around given position
+    # if i,j go out of bounds, just skip to next iteration w/ continue
     for i in range(x-1, x+2):
-        if (i<0 or i>state.shape[0]):
+        if (i<0 or i>state.shape[0]-1):
             continue
         for j in range(y-1, y+2):
-            if (j<0 or j>state.shape[1]):
+            if (j<0 or j>state.shape[1]-1):
                 continue
 
             # need to prevent cell from counting itself (in case it was 1)
@@ -31,7 +32,7 @@ def check(position, state):
                 continue
 
             # count up all 1s surrounding cell
-            elif (state[i][j] == 1):
+            if (state[i][j] == 1):
                 count += 1
     
 
