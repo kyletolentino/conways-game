@@ -1,4 +1,5 @@
 import numpy as np
+import random
 
 # RULES:
 # Any dead cell with 3 live neighbors (in the 3x3 grid centered on that cell) becomes filled
@@ -35,7 +36,6 @@ def check(position, state):
             if (state[i][j] == 1):
                 count += 1
     
-
     # apply rules if cell is dead/alive
     if (state[x][y] == 0):
         if (count == 3):
@@ -63,14 +63,14 @@ def step(state):
     return next
 
 
+# want to create a fake step function for creating wrong matrices
 def false_step(state):
-    # want to create a fake step function for creating wrong matrices
     next = np.zeros((state.shape[0], state.shape[1]), dtype=int)
 
     for x in range(state.shape[0]):
         for y in range(state.shape[1]):
             # run check function to step
-            next[x][y] = randint(0,1)
+            next[x][y] = random.randint(0,1)
 
     return next
 
@@ -92,3 +92,20 @@ def runs(state, n):
         print("")
         print(next)
         return runs(next, count)
+
+
+# created these functions for keras challenge, assumed 3x3 grid size
+# both functions return a list of matrix1, matrix2, and label
+# to be used for creating a csv file
+
+def gen_real():
+    state = np.random.randint(2, size=(3,3))
+    row = [state, step(state), 1]
+    return row
+
+
+def gen_false():
+    state = np.random.randint(2, size=(3,3))
+    row = [state, false_step(state), 0]
+    return row
+
