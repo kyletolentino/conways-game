@@ -1,3 +1,25 @@
+2/8/2020
+- need to figure out:
+    - best architecture for NN
+        - RNN/LSTM? dealing with sequential data
+        - CNN? usually with images, but since there are two matrices, just stack em?
+    - creating a virtualenv on EWS (can't use anaconda on these machines)
+        - pandas
+        - keras
+        - TF 2.1
+        - python 3.5.2 (only available python module on EWS that supports Keras and TF2.0-1)
+        - seaborn
+        - scikit-learn
+    - how to create data
+        - IDEA: create two/three functions that returns a tuple of matrices (start, done)
+        - function1 will create correct matrices, function2/3 will create incorrect matrices
+            - for incorrect, may do random and/or variation of function1, where I change few values
+            - right now, will only create 1 real and 1 fake function
+        - NOTE: I will assume a 3x3 grid size for keras challenge
+        - aiming for even distribution of fake and real
+
+    
+
 2/7/2020
 - Setup git on Engineering Workstation (EWS)
 - np.random.randit to generate 0s and 1s randomly
@@ -34,6 +56,7 @@
     - Improve UI and arguments (argparse)
 
 - [starting] Part 2 !! (in a bit b/c of argparse)
+
 
 2/6/2020
 - Initialized git for source control
