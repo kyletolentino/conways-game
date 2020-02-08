@@ -11,7 +11,7 @@ print(ex)
 # run python gen.py n, where n = # of generations to pass
 # default is n=1 (i.e. one step)
 parser = argparse.ArgumentParser(description='How many generations?', epilog='Hello there ;)')
-parser.add_argument('gens', type=int, nargs='?', const=1, help = "Will run Conway's Game of Life for n generations")
+parser.add_argument('gens', type=int, nargs='?', const=1, help = "Will run Conway's Game of Life for n generations", default=1)
 args = parser.parse_args()
 
 n = args.gens
