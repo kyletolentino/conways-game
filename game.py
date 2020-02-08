@@ -1,7 +1,7 @@
 import numpy as np
 import pickle
 import argparse
-# calling my functions
+# this is my functions.py module
 import functions as func
 
 ex = pickle.load(open("input.pkl", 'rb'))
