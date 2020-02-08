@@ -47,3 +47,17 @@ def check(position, state):
             return 1
         else:
             return 0
+
+
+def step(state):
+    # need to create temporary state (next) before looping
+    # don't want to access edited values while iterating
+    # i.e. something changed in row 1, but row 2 needs original value
+    next = np.zeros((state.shape[0], state.shape[1]), dtype=int)
+
+    for x in range(state.shape[0]):
+        for y in range(state.shape[1]):
+            # run check function to step
+            next[x][y] = check((x,y), state)
+
+    return next
