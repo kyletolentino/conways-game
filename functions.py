@@ -61,3 +61,34 @@ def step(state):
             next[x][y] = check((x,y), state)
 
     return next
+
+
+def false_step(state):
+    # want to create a fake step function for creating wrong matrices
+    next = np.zeros((state.shape[0], state.shape[1]), dtype=int)
+
+    for x in range(state.shape[0]):
+        for y in range(state.shape[1]):
+            # run check function to step
+            next[x][y] = randint(0,1)
+
+    return next
+
+
+# steps a given state for n generations, also provides a visual for each step
+# if you just want to see the end state, delete the print statments inside runs()
+def runs(state, n):
+    count = n
+    if count<=1:
+        print("")
+        print("    V")
+        print("")
+        return step(state)
+    else:
+        count -= 1
+        next = step(state)
+        print("")
+        print("    V")
+        print("")
+        print(next)
+        return runs(next, count)

@@ -16,24 +16,9 @@ args = parser.parse_args()
 
 n = args.gens
 
-# if you just want to see the end state, delete the print statments inside runs()
-def runs(state, n):
-    count = n
-    if count<=1:
-        print("")
-        print("    V")
-        print("")
-        return func.step(state)
-    else:
-        count -= 1
-        next = func.step(state)
-        print("")
-        print("    V")
-        print("")
-        print(next)
-        return runs(next, count)
+# run the output
+output = func.runs(ex, n)
 
-output = runs(ex, n)
 print(output)
 print("")
 print("Created output.pkl")
