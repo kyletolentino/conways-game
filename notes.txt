@@ -19,11 +19,21 @@
 - got it to work!! (for most part)
     - (2,1) is 1 but should be 0
     - running func((2,1), state) returns a 0 but not on the board
-    
+
 - EUREEEKA!
     - I think it was the way I assigned ex[x,y] in game.py
     - Should have created copy first (with dim of first state)
     - then copy within for loops
+
+- Now I need to:
+    - test this for different dimensions
+        - consider 0x0, 1x1, 2x2 cases
+    - Create function to run this for x generations
+        - pretty sure I have to use recursion
+        - yea I have to lol (it works tho!)
+    - Improve UI and arguments (argparse)
+
+- [starting] Part 2 !! (in a bit b/c of argparse)
 
 2/6/2020
 - Initialized git for source control
