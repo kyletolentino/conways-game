@@ -4,7 +4,7 @@ import argparse
 
 # will let gen.py take arguments for dim
 # if only one argument, grid will be square
-# if 2 arguments, grid will be w x h - see *
+# if 2 arguments, grid will be w xinput = np.random.randint(2, size=(dim,dim)) h - see *
 parser = argparse.ArgumentParser(description="Choose dimension of grid")
 parser.add_argument('length', const=3, nargs='?',type=int, default=3)
 parser.add_argument('height', const=3, nargs='?', type=int, default=3)
