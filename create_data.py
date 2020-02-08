@@ -5,8 +5,8 @@ import random
 
 with open('data.csv','w') as f:
     writer=csv.writer(f, delimiter=',',lineterminator='\n',)
-    writer.writerow(["Matrix 1", "Matrix 2", "Target"])
-    for i in range(5):
+    writer.writerow(["state1", "state2", "target"])
+    for i in range(200000):
         # randomly adds real/fake data
         pick = random.randint(0,1)
         if (pick == 0):
