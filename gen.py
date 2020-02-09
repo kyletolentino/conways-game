@@ -11,12 +11,12 @@ parser.add_argument('height', const=3, nargs='?', type=int, default=3)
 args = parser.parse_args()
 
 # choose dimension of square
-dim = args.length;
+dim = args.length
 
 # can also choose a non-square shape
 # *must change (dim, dim) to (w,h) within 'input'
-w = dim;
-h = args.height;
+w = dim
+h = args.height
 
 
 input = np.random.randint(2, size=(dim,dim))
