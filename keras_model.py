@@ -1,18 +1,23 @@
-import pandas as pd
+import numpy as np
+import pickle
+from sklearn.model_selection import train_test_split
 import matplotlib.pyplot as plt
 # import tensorflow as tf
-from sklearn.model_selection import train_test_split
 
-batch_size = 32
-num_classes = 2
-epochs = 12
+data = pickle.load(open("data.pkl", 'rb'))
 
-# preprocessing data
-data = pd.read_csv('./data.csv')
+x1 = data[0]
+x2 = data[1]
+y = data[2]
 
-y = data['target'].values
-X = data.drop('target', axis=1)
+X = np.concatenate((x1, x2), axis=1)
 
 X_train, X_val, y_train, y_val = train_test_split(X, y, random_state=7)
+# print(data.head())
 
-print(X_train.shape)
+print(y)
+
+print(x1[3])
+print(x2[3])
+print(y[3])
+
