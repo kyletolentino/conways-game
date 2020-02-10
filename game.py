@@ -23,7 +23,7 @@ output = func.runs(ex, n)
 print(output)
 print("")
 print("Created output.pkl")
-print("")ga
+print("")
 
 # save the output
 with open('output.pkl', 'wb') as outfile:
