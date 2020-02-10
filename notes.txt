@@ -1,3 +1,30 @@
+2/10/2020
+- 2x dense (32 neurons), concatenate, dense (16 neurons), dense (1 neuron)
+    - loss= 0.0845, acc = 0.9785, val_loss = 0.0802, val_acc = 0.9802
+    - nearly identical to original network (only differences in the hundredths place and beyond)
+- 2x dense (64 neurons), concatenate, dense (64 neurons), dense (1 neuron)
+    - loss: 0.0666 - acc: 0.9825 - val_loss: 0.0667 - val_acc: 0.9866
+    - this it it chief
+
+
+2/9/2020
+- still trying CNN?
+- will continue to fine tune MLP while trying to work out CNN
+    - MLP just stays at 75% accuracy, but loss decreases while val_loss increases (overfitting?)
+- its so weird, np.concatenate axes worked differently when pulling from data.pkl vs setting my matrices
+- might have to change data so its 5x5 (that way we have a kernel of size 3x3?)
+    - or keep 3x3 and do a 2x2 kernel
+- "Error when checking model input: the list of Numpy arrays
+    that you are passing to your model is not the size the model expected."
+- Finally got MLP to work with shared layer (so I didn't have to concatenate matrices)
+- I got it to work?
+    - epoch size = 50
+    - batch_size = 128
+    - 2x dense layers (64 neurons), concatenate, dense layer (32 neurons), dense layer (1 neuron)
+    - loss = 0.0674, acc = 0.9827, val_loss =0.0649, val_acc = 0.9823
+    - too accurate? worried it might be looking at patterns too closely
+
+
 2/8/2020
 - need to figure out:
     - best architecture for NN
@@ -6,7 +33,7 @@
     - creating a virtualenv on EWS (can't use anaconda on these machines)
         - pandas
         - keras
-        - TF 2.1
+        - TF 2.0
         - python 3.5.2 (only available python module on EWS that supports Keras and TF2.0-1)
         - seaborn
         - scikit-learn
@@ -17,6 +44,13 @@
             - right now, will only create 1 real and 1 fake function
         - NOTE: I will assume a 3x3 grid size for keras challenge
         - aiming for even distribution of fake and real
+
+    - working with dataframes (pandas) is a pain, will try to use numpy arrays instead (sigh)
+        - would a list of [np array, np array, label] work?
+    - epochs * steps per epoch = batch size (from my log.txt in disaster-tweets)
+
+    - finally got model to work! (just simple MLP - will try to fine tune and then compare w/ CNN)
+
 
     
 
