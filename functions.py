@@ -92,21 +92,4 @@ def runs(state, n):
         print("")
         print(next)
         return runs(next, count)
-
-
-# created these functions for keras challenge, assumed 3x3 grid size
-# both functions return a list of matrix1, matrix2, and label
-# to be used for creating a csv file
-# 1 denotes valid sequence, 0 denotes invalid sequence
-
-def gen_real():
-    state = np.random.randint(2, size=(3,3))
-    row = [state, step(state), 1]
-    return row
-
-
-def gen_false():
-    state = np.random.randint(2, size=(3,3))
-    row = [state, false_step(state), 0]
-    return row
-
+    
